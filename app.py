@@ -4,9 +4,14 @@ from tutor_bot import tutor_response
 
 
 # Page config
-st.set_page_config(page_title="AI Personal Tutor", layout="wide",text-align="centre")
+st.set_page_config(page_title="AI Study Planner & Chatbot", layout="wide")
+st.markdown(
+    "<h1 style='text-align: center;'>🎓 AI Study Planner & Chatbot</h1>",
+    unsafe_allow_html=True
+)
 
-st.title("🎓 AI Study Planner & Chatbot")
+
+#st.title("🎓 AI Study Planner & Chatbot")
 
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("👤 Student Profile")
@@ -73,6 +78,7 @@ for speaker, msg in st.session_state.chat:
         st.markdown(f"**🧑 You:** {msg}")
     else:
         st.markdown(f"**🤖 Tutor:** {msg}")
+
 
 
 
