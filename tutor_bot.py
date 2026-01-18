@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyBuYnEZIrWRKsC4Coejyt6h9MT-MZXNrA4")
+genai.configure(api_key="GEMINI_API_KEY")
 
 model = genai.GenerativeModel("gemini-3-flash-preview")
 
@@ -25,3 +25,4 @@ Do not use complex language.
 
     response = model.generate_content(prompt)
     return response.text
+
