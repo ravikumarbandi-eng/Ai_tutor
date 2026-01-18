@@ -19,11 +19,12 @@ Accuracy: {accuracy}%
 Student question:
 {user_input}
 
-Give a clear, simple explanation.
+Give a clear, more explanation.
 If accuracy is low, suggest improvements.
-Keep the response short and motivating.
+Keep the response large and motivating.
 """
 
     response = model.generate_content(prompt)
     return response.text
+
 
