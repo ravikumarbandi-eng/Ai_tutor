@@ -1,6 +1,6 @@
 import streamlit as st
 from study_plan import generate_study_plan
-from chatbot.tutor_bot import tutor_response
+from tutor_bot import tutor_response
 
 
 # Page config
@@ -75,3 +75,4 @@ for speaker, msg in st.session_state.chat:
         st.markdown(f"**🧑 You:** {msg}")
     else:
         st.markdown(f"**🤖 Tutor:** {msg}")
+
