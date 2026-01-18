@@ -1,32 +1,28 @@
+import streamlit as st
 import google.generativeai as genai
 
-# Configure Gemini API
-#genai.configure(api_key="GEMINI_API_KEY")
+# Read API key from Streamlit Secrets
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-#api_key = os.getenv("GEMINI_API_KEY")
-model = genai.GenerativeModel("gemini-3-flash-preview")
+
+model = genai.GenerativeModel("gemini-pro")
 
 def tutor_response(user_input, subject, topic, difficulty, accuracy):
     prompt = f"""
 You are an AI personal tutor.
 
-Student details:
-- Subject: {subject}
-- Topic: {topic}
-- Difficulty level: {difficulty}
-- Accuracy: {accuracy}%
+Student context:
+Subject: {subject}
+Topic: {topic}
+Difficulty: {difficulty}
+Accuracy: {accuracy}%
 
 Student question:
-"{user_input}"
+{user_input}
 
-Give a clear, simple, motivating explanation.
-If accuracy is low, give improvement tips.
-Do not use complex language.
+Give a clear, simple explanation.
+If accuracy is low, suggest improvements.
+Keep the response short and motivating.
 """
 
     response = model.generate_content(prompt)
     return response.text
-
-
-
-
