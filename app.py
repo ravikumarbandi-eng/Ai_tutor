@@ -4,20 +4,17 @@ from tutor_bot import tutor_response
 
 
 # Page config
-st.set_page_config(page_title="AI Personal Tutor", layout="wide")
+st.set_page_config(page_title="AI Personal Tutor", layout="wide",text-align:"centre")
 
 st.title("🎓 AI Study Planner & Chatbot")
-st.markdown("<p style='text-align:center;color:gray;'>AI&ML MODEL SYSTEM</p>", unsafe_allow_html=True)
 
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("👤 Student Profile")
 
-subject = st.sidebar.selectbox(
-    "Select Subject",
-    ["DSA", "Machine Learning", "Python", "Databases", "Operating Systems"]
+subject = st.sidebar.text_input("Subject Name"
 )
 
-topic = st.sidebar.text_input("Topic Name", "Arrays")
+topic = st.sidebar.text_input("Topic Name")
 
 difficulty = st.sidebar.selectbox(
     "Difficulty Level",
@@ -76,5 +73,6 @@ for speaker, msg in st.session_state.chat:
         st.markdown(f"**🧑 You:** {msg}")
     else:
         st.markdown(f"**🤖 Tutor:** {msg}")
+
 
 
